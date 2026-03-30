@@ -5,7 +5,7 @@ import geoip2.database
 from collections import Counter
 
 # --- 設定區 ---
-LOG_FILE = 'avalue.com-ssl_log-Mar-2026' 
+LOG_FILE = 'log-Mar-2026' 
 DB_FILE = 'dbip-country-lite-2026-03.mmdb'
 LOG_PATTERN = r'^(?P<ip>\S+) - - \[(?P<time>.*?)\] "(?P<request>.*?)" (?P<status>\d{3}) (?P<size>\S+) "(?P<referer>.*?)" "(?P<user_agent>.*?)"'
 
