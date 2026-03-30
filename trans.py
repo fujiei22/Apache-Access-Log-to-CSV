@@ -10,7 +10,7 @@ DB_FILE = 'dbip-country-lite-2026-03.mmdb'
 LOG_PATTERN = r'^(?P<ip>\S+) - - \[(?P<time>.*?)\] "(?P<request>.*?)" (?P<status>\d{3}) (?P<size>\S+) "(?P<referer>.*?)" "(?P<user_agent>.*?)"'
 
 def analyze_and_rank():
-    print("--- 📊 Log 分析工具 (Top 10 排名版) ---")
+    print("📊 Log 分析工具 (Top 10 排名)")
     print("格式: 年/月/日 (例如 2026/02/28)")
     start_input = input("開始日期: ").strip()
     end_input = input("結束日期: ").strip()
@@ -85,14 +85,14 @@ def analyze_and_rank():
         if exported_count > 0:
             # 1. 輸出 Top 10 國家
             print("\n🌍 [Top 10 流量來源國家]")
-            print(f"{'國家':<25} | {'請求次數':<10}")
+            print(f"{'國家':<23} | {'請求次數':<10}")
             print("-" * 40)
             for country, count in country_counter.most_common(10):
                 print(f"{country:<25} | {count:<10,}")
 
             # 2. 輸出 Top 10 IP
             print("\n💻 [Top 10 請求來源 IP]")
-            print(f"{'IP 位址':<18} | {'國家':<15} | {'請求次數':<10}")
+            print(f"{'IP 位址':<16} | {'國家':<13} | {'請求次數':<10}")
             print("-" * 50)
             for ip, count in ip_counter.most_common(10):
                 country = ip_to_country.get(ip, "Unknown")
